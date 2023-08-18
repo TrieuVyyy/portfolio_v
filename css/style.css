@@ -1,0 +1,229 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Hind', sans-serif;
+}
+/* css dùng chung cho nhiều ele (thẻ) thì viết riêng  */
+a.active {
+    font-size: 16px;
+    font-weight: 400;
+    color: #34a22c !important;
+    border-bottom: 2px solid #34a22c !important;
+}
+
+/* css trong phần layout thì theo thứ tự từ ngoài vào trong  */
+.header .container {
+    height: 75px;
+}
+
+.header .menu ul {
+    list-style: none;
+}
+
+.header .menu ul li {
+
+}
+
+.header .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+
+}
+
+.header .menu ul li a:hover {
+    color: #34a22c;
+    transition: 0.5s;
+}
+
+.header .menu ul li a::after {
+    content: '';
+    width: 0px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.5s;
+}
+
+/* hover vào thẻ a after sẽ thay đổi  */
+.header .menu ul li a:hover::after {
+    width: 100%;
+    transition: width 0.5s;
+    background-color: #34a22c;
+    color: #34a22c;
+}
+
+/* css cho phần carousel  */
+.slider {
+    position: relative;
+}
+
+.slider .carousel {
+    height: 100vh;
+}
+
+.slider .carousel-indicators,.slider .carousel-control-prev,.slider .carousel-control-next{
+    z-index: 11;
+}
+
+.slider .carousel-item img {
+    object-fit: cover; 
+    height: 100vh;
+}
+
+.slider .carousel-inner {
+    height: 100%;
+}
+
+.carousel-caption {
+    z-index: 10;
+    height: auto;
+}
+
+.slider .carousel-inner .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+    position: absolute;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    display: none;
+}
+
+.slider .carousel .carousel-caption {
+    color: #fff !important;
+}
+
+.slider .carousel .carousel-indicators {
+    height: auto;
+}
+
+.slider .carousel .carousel-indicators button {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    padding: 0;
+}
+
+.slider .carousel .carousel-indicators button.active {
+    background: #34a22c;
+}
+
+.slider .carousel .carousel-caption {
+    display: flex !important; 
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    z-index: 10;
+}
+
+.slider .carousel .carousel-caption img {
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    animation: fadeUp 1s;
+    animation-fill-mode: both; 
+    /* giữ lại trạng thái cuối cùng của aniamtion */
+}
+
+.slider .carousel .carousel-caption h5{
+    animation: fadeUp 1s ;
+    animation-delay: 1s ;
+    opacity: 0;
+    animation-fill-mode: both;
+}
+
+.slider .carousel .carousel-caption p{
+    animation: fadeUp 1s ;
+    animation-delay: 2s ;
+    opacity: 0;
+    animation-fill-mode: both;
+}
+
+.project .card:hover{
+    border-color: #34a22c;
+    color: #34a22c;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.project .card {
+    animation: scale-item 1s;
+
+}
+
+.project button.nav-link {
+    color: #000;
+}
+
+.project button.nav-link.active {
+    background: #34a22c;
+    color: #fff;
+}
+
+.avalable {
+    min-height: 600px;
+    background-image: url(../img/3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* position: relative; */
+}
+
+
+.avalable .content {
+    width: 100%;
+    min-height: 600px;
+    background: rgba(0,0,0,0.5);
+}
+
+.avalable .card {
+    background: transparent;
+    transition: background 0.5s;
+}
+
+.avalable .card:hover {
+    cursor: pointer;
+    background: rgba(0,0,0,0.5) ;
+    transition: background 0.5s;
+}
+
+.achievement {
+    min-height: 450px;
+    background: url(/img/memphis_3.png) 0 100% no-repeat, url(/img/memphis_2.png) bottom right no-repeat;
+    background-size: 550px , 600px;
+    /* background-position: 0 100%;
+    background-repeat: no-repeat; */
+}
+
+
+
+@keyframes fadeUp {
+    0%{
+        transform: translateY(200px);
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes scale-item {
+    0% {
+        transform: scale(0,0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1,1);
+        opacity: 1;
+    }
+}
